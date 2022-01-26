@@ -4,8 +4,9 @@ header{
     justify-content: space-between;
     height: 144px;
     color: #FFF;
-    padding: 0 32px;
-    margin-bottom: 32px;
+    padding: 0 4%;
+    margin-bottom: 3.2rem;
+    width: 86%;
    
 }
 
@@ -14,3 +15,14 @@ header{
     cursor: pointer;
 }
 
+@media (max-width:768px){
+    header{
+        flex-direction: column;
+        height: auto;
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width:540px){
+
+}
