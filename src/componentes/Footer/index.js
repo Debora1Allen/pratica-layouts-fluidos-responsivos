@@ -1,7 +1,16 @@
-import './style.css'
+import './style.css';
+import Logo from '../../assest/logo.svg'
 function Footer() {
     return (
-        <h1>Footer</h1>
+        <footer>
+            <div className="footer-left">
+                <img src={Logo} />
+            </div>
+            <div className="footer-right">
+
+            </div>
+        </footer>
+
     )
 }
 export default Footer;
