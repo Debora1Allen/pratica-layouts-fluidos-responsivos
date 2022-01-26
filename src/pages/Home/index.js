@@ -2,24 +2,36 @@ import './style.css';
 import Header from '../../componentes/Header';
 import Footer from '../../componentes/Footer';
 import { useEffect, useState } from 'react';
+import Card from '../../componentes/Card';
 
 
 function Home() {
-  const [movies, setMovies] = useState({});
+  const [movies, setMovies] = useState([]);
+
   useEffect(() => {
-    async function loadMovie() {
+    async function loadMovieData() {
       const response = await fetch('https://tmdb-proxy.cubos-academy.workers.dev/3/discover/movie?language=pt-BR&include_adult=false', {
         method: 'GET'
       });
+
       const { results } = await response.json();
       setMovies(results);
     }
 
-    loadMovie();
+    loadMovieData();
   }, []);
   return (
     <div className="container-home" >
       <Header />
+
+      <section className='section-movies' >
+        {movies.map((movie) => (
+          <Card key={movie.id}
+            cover={movie.poster_path}
+            title={movie.title}
+          />
+        ))}
+      </section>
       <Footer />
     </div>
   );
