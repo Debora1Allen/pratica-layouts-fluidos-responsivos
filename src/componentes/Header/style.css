@@ -24,5 +24,12 @@ header{
 }
 
 @media (max-width:540px){
-
+    .logo{
+        margin: 3rem 0;
+    }
+    header{
+        margin: 0;
+        background-color: rgb(173, 5, 5);
+        
+    }
 }
